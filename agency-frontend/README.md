@@ -1,14 +1,49 @@
-# Modern React Agency Frontend
+# Modern LPG Gas Agency Management System
 
-A complete, production-ready React application built with the latest technologies and best practices. This project includes all modern features you'd expect in a professional React application.
+A complete, production-ready LPG Gas Agency management application built with the latest React technologies and best practices. This comprehensive system handles all aspects of LPG gas distribution and customer management for a single brand.
 
-## 🚀 Features
+## 🏭 LPG Agency Features
+
+### Core Business Modules
+- **Customer Management** - Complete customer database with KYC documents
+- **Cylinder Tracking** - Real-time cylinder inventory and tracking
+- **Booking System** - Online gas booking with delivery scheduling
+- **Delivery Management** - Route optimization and delivery tracking
+- **Payment Management** - Multiple payment methods and billing
+- **Inventory Management** - Stock management and supplier coordination
+- **Driver Management** - Delivery personnel management and tracking
+- **Price Management** - Dynamic pricing and subsidy calculations
+- **Reports & Analytics** - Business intelligence and performance metrics
+- **Notification System** - SMS/Email alerts for customers and staff
+- **Complaint Management** - Customer support and issue resolution
+- **Distributor Portal** - Supplier and distributor coordination
+
+### Customer Portal Features
+- **Online Booking** - Easy gas cylinder booking
+- **Delivery Tracking** - Real-time delivery status
+- **Payment History** - Transaction records and receipts
+- **Subsidy Management** - Government subsidy tracking
+- **Connection Management** - New connections and transfers
+- **Digital Receipt** - Paperless billing system
+- **Emergency Booking** - Priority booking for emergencies
+
+### Admin Dashboard Features
+- **Business Analytics** - Sales, revenue, and performance metrics
+- **Inventory Control** - Stock levels and reorder management
+- **Route Planning** - Delivery route optimization
+- **Staff Management** - Employee records and performance
+- **Financial Reports** - Daily, monthly, and yearly financial reports
+- **Customer Insights** - Customer behavior and satisfaction analytics
+- **Safety Compliance** - Safety protocols and compliance tracking
+- **Regulatory Reporting** - Government compliance reports
+
+## 🚀 Technical Features
 
 ### Core Technologies
-- **React 19** - Latest React with concurrent features
+- **React 18** - Latest React with concurrent features
 - **TypeScript** - Full type safety and IntelliSense
 - **Tailwind CSS** - Utility-first CSS framework
-- **Vite** - Fast build tool and dev server
+- **Node.js Backend** - RESTful API with Express.js
 
 ### UI & Design
 - **Radix UI** - Accessible, unstyled UI components
@@ -16,58 +51,43 @@ A complete, production-ready React application built with the latest technologie
 - **Framer Motion** - Smooth animations and transitions
 - **Lucide React** - Beautiful SVG icons
 - **Dark Mode** - System preference detection with manual toggle
+- **Responsive Design** - Works perfectly on all devices
 
 ### State Management
 - **Zustand** - Lightweight state management
 - **React Query** - Server state management and caching
 - **Persistent Storage** - State persistence across sessions
 
-### Routing & Navigation
-- **React Router v6** - Modern routing with data loading
-- **Protected Routes** - Authentication-based route protection
-- **Lazy Loading** - Code splitting for better performance
-
-### Forms & Validation
-- **React Hook Form** - Performant forms with minimal re-renders
-- **Zod** - TypeScript-first schema validation
-- **Form Validation** - Real-time validation with error handling
-
-### HTTP & API
-- **Axios** - HTTP client with interceptors
-- **Request/Response Interceptors** - Global error handling
-- **API Error Handling** - Centralized error management
-- **File Upload** - Progress tracking and error handling
-
-### Authentication
+### Authentication & Security
 - **JWT-based Auth** - Secure token-based authentication
-- **Route Protection** - Automatic redirects for protected routes
-- **Auth Store** - Persistent authentication state
-- **Login/Register** - Complete authentication flow
+- **Role-based Access** - Customer, Staff, Admin, Super Admin roles
+- **Route Protection** - Authentication-based route protection
+- **Data Encryption** - Sensitive data protection
+- **Audit Logs** - Complete activity tracking
 
-### Development Tools
-- **ESLint** - Code linting with modern rules
-- **Prettier** - Code formatting
-- **TypeScript** - Static type checking
-- **React DevTools** - Component inspection
-- **React Query DevTools** - Query debugging
+### Database & API
+- **MongoDB** - NoSQL database for scalability
+- **Mongoose** - Object modeling for Node.js
+- **RESTful APIs** - Standard API architecture
+- **Data Validation** - Input validation and sanitization
+- **Error Handling** - Comprehensive error management
 
-### Performance
-- **Code Splitting** - Route-based code splitting
-- **Lazy Loading** - Component lazy loading
-- **Memoization** - Optimized re-renders
-- **Bundle Optimization** - Tree shaking and minification
-
-### Testing
-- **Jest** - Unit testing framework
-- **React Testing Library** - Component testing
-- **User Event** - User interaction testing
+### Modern Features
+- **PWA Support** - Progressive Web App capabilities
+- **Offline Mode** - Basic functionality without internet
+- **Push Notifications** - Real-time notifications
+- **QR Code Integration** - Cylinder tracking via QR codes
+- **Geolocation** - GPS tracking for deliveries
+- **WhatsApp Integration** - Order confirmations via WhatsApp
+- **Payment Gateway** - Multiple payment options
+- **SMS Gateway** - Automated SMS notifications
 
 ## 📦 Installation
 
 1. **Clone the repository**
    ```bash
    git clone <repository-url>
-   cd agency-frontend
+   cd lpg-agency-system
    ```
 
 2. **Install dependencies**
@@ -83,6 +103,10 @@ A complete, production-ready React application built with the latest technologie
    Update the environment variables in `.env.local`:
    ```
    REACT_APP_API_URL=http://localhost:3001/api
+   REACT_APP_COMPANY_NAME=Your LPG Agency Name
+   REACT_APP_COMPANY_CODE=AGENCY001
+   REACT_APP_RAZORPAY_KEY=your_razorpay_key
+   REACT_APP_MAPS_API_KEY=your_google_maps_api_key
    ```
 
 4. **Start the development server**
@@ -90,155 +114,174 @@ A complete, production-ready React application built with the latest technologie
    npm start
    ```
 
-## 🛠️ Available Scripts
-
-- `npm start` - Start development server
-- `npm run build` - Build for production
-- `npm test` - Run tests
-- `npm run lint` - Run ESLint
-- `npm run lint:fix` - Fix ESLint errors
-- `npm run format` - Format code with Prettier
-- `npm run type-check` - Check TypeScript types
-
-## 📁 Project Structure
+## 🏗️ Project Structure
 
 ```
 src/
-├── components/          # Reusable UI components
-│   ├── ui/             # Base UI components (Button, Card, etc.)
-│   ├── Layout.tsx      # Main layout component
-│   ├── ThemeProvider.tsx
-│   └── AuthProvider.tsx
-├── pages/              # Page components
-│   ├── HomePage.tsx
-│   ├── LoginPage.tsx
-│   ├── RegisterPage.tsx
-│   ├── DashboardPage.tsx
-│   ├── ProfilePage.tsx
-│   └── SettingsPage.tsx
-├── store/              # State management
-│   ├── authStore.ts    # Authentication state
-│   └── themeStore.ts   # Theme state
-├── lib/                # Utility functions
-│   ├── api.ts          # API client and methods
-│   └── utils.ts        # Helper functions
-├── hooks/              # Custom React hooks
-├── types/              # TypeScript type definitions
-└── App.tsx             # Main app component
+├── components/
+│   ├── ui/                 # Base UI components
+│   ├── customer/           # Customer-related components
+│   ├── admin/              # Admin dashboard components
+│   ├── delivery/           # Delivery management components
+│   ├── inventory/          # Inventory management components
+│   ├── payments/           # Payment components
+│   └── reports/            # Reporting components
+├── pages/
+│   ├── customer/           # Customer portal pages
+│   ├── admin/              # Admin dashboard pages
+│   ├── delivery/           # Delivery management pages
+│   └── auth/               # Authentication pages
+├── store/
+│   ├── authStore.ts        # Authentication state
+│   ├── customerStore.ts    # Customer management
+│   ├── inventoryStore.ts   # Inventory management
+│   ├── orderStore.ts       # Order management
+│   └── deliveryStore.ts    # Delivery management
+├── lib/
+│   ├── api/                # API endpoints
+│   ├── utils/              # Utility functions
+│   ├── constants/          # Application constants
+│   └── types/              # TypeScript definitions
+└── assets/                 # Static assets
 ```
 
-## 🎨 UI Components
+## � Business Modules
 
-The application uses a modern component library built on top of Radix UI:
+### 1. Customer Management
+- Customer registration and KYC verification
+- Connection management (new, transfer, surrender)
+- Customer profile and document management
+- Customer communication history
+- Loyalty program management
 
-- **Button** - Various styles and states
-- **Card** - Content containers with header/footer
-- **Form Components** - Inputs, labels, validation
-- **Navigation** - Responsive navigation bar
-- **Loading States** - Spinners and skeletons
-- **Toast Notifications** - Success/error messages
+### 2. Cylinder & Inventory Management
+- Real-time cylinder tracking
+- Stock level monitoring
+- Supplier coordination
+- Quality control tracking
+- Safety inspection records
 
-## 🔐 Authentication
+### 3. Booking & Order Management
+- Online booking system
+- Emergency booking requests
+- Order priority management
+- Bulk order handling
+- Subscription management
 
-The app includes a complete authentication system:
+### 4. Delivery Management
+- Route optimization
+- Real-time GPS tracking
+- Delivery status updates
+- Driver assignment
+- Proof of delivery
 
-- **Login/Register** - User authentication forms
-- **JWT Tokens** - Secure token-based auth
-- **Protected Routes** - Automatic route protection
-- **Auth Store** - Persistent authentication state
-- **Auto-logout** - Automatic logout on token expiry
+### 5. Payment & Billing
+- Multiple payment gateways
+- Subsidy calculations
+- Invoice generation
+- Payment history tracking
+- Outstanding amount management
 
-## 🎯 State Management
+### 6. Reports & Analytics
+- Sales performance reports
+- Customer analytics
+- Inventory reports
+- Financial statements
+- Regulatory compliance reports
 
-### Zustand Stores
+## 💳 Payment Integration
 
-1. **Auth Store** - User authentication state
-2. **Theme Store** - Dark/light mode preferences
+- **Razorpay** - UPI, Cards, Net Banking, Wallets
+- **Cash on Delivery** - Traditional payment method
+- **Digital Wallets** - Paytm, PhonePe, Google Pay
+- **Bank Transfer** - NEFT/RTGS support
+- **Subsidy Management** - Government subsidy calculation
 
-### React Query
+## 📱 Mobile Features
 
-- **Server State** - API data caching and synchronization
-- **Background Updates** - Automatic data refetching
-- **Error Handling** - Centralized error management
-- **Loading States** - Built-in loading indicators
+- **Responsive Design** - Works on all mobile devices
+- **PWA Installation** - Install as mobile app
+- **Offline Booking** - Book gas when offline
+- **Push Notifications** - Real-time order updates
+- **QR Code Scanner** - Scan cylinder QR codes
+- **GPS Integration** - Location-based services
 
-## 🌙 Dark Mode
+## 🔐 Security Features
 
-The application supports three theme modes:
+- **Data Encryption** - AES-256 encryption for sensitive data
+- **Role-based Access** - Granular permission system
+- **Audit Logging** - Complete activity tracking
+- **Secure API** - JWT token-based authentication
+- **Input Validation** - XSS and SQL injection protection
+- **Session Management** - Secure session handling
 
-- **Light** - Light color scheme
-- **Dark** - Dark color scheme  
-- **System** - Follows system preference
+## 📊 Analytics Dashboard
 
-Theme preference is automatically saved and restored.
+- **Real-time Metrics** - Live business performance
+- **Customer Insights** - Behavior and satisfaction analysis
+- **Sales Trends** - Historical and predictive analytics
+- **Inventory Analytics** - Stock optimization insights
+- **Delivery Performance** - Efficiency and timing analysis
+- **Financial Overview** - Revenue and profit tracking
 
 ## 🔧 Configuration
 
-### Tailwind CSS
+### Company Settings
+- Agency name and branding
+- Contact information
+- Operating hours
+- Service areas
+- Pricing structure
 
-The project uses a custom Tailwind configuration with:
-
-- **CSS Variables** - Dynamic theming support
-- **Custom Colors** - Brand color palette
-- **Responsive Design** - Mobile-first approach
-- **Animations** - Custom keyframes and transitions
-
-### TypeScript
-
-Strict TypeScript configuration with:
-
-- **Strict Mode** - Maximum type safety
-- **Path Mapping** - Clean import paths
-- **Type Checking** - Compile-time error detection
+### System Settings
+- Notification preferences
+- Payment gateway configuration
+- SMS/Email templates
+- Delivery radius settings
+- Safety protocols
 
 ## 🚀 Deployment
 
-### Build for Production
-
+### Production Build
 ```bash
 npm run build
 ```
 
-This creates an optimized build in the `build` folder.
-
-### Environment Variables
-
-Set the following environment variables for production:
-
+### Environment Variables for Production
 ```
-REACT_APP_API_URL=https://your-api-url.com/api
+REACT_APP_API_URL=https://your-api-domain.com/api
+REACT_APP_COMPANY_NAME=Your LPG Agency Name
+REACT_APP_COMPANY_CODE=AGENCY001
+REACT_APP_RAZORPAY_KEY=your_production_razorpay_key
+REACT_APP_MAPS_API_KEY=your_production_maps_api_key
 ```
 
 ### Deployment Options
-
 - **Vercel** - Zero-config deployment
 - **Netlify** - Static site hosting
 - **AWS S3** - Static website hosting
-- **Docker** - Containerized deployment
-
-## 📱 PWA Features
-
-The application includes Progressive Web App features:
-
-- **Service Worker** - Offline functionality
-- **App Manifest** - Install as native app
-- **Responsive Design** - Works on all devices
-- **Performance** - Optimized loading and caching
+- **Digital Ocean** - VPS deployment
+- **Heroku** - Container deployment
 
 ## 🧪 Testing
-
-Run tests with:
 
 ```bash
 npm test
 ```
 
 The project includes:
-
 - **Unit Tests** - Component testing
-- **Integration Tests** - User flow testing
-- **Accessibility Tests** - A11y compliance
-- **Performance Tests** - Core Web Vitals
+- **Integration Tests** - API integration testing
+- **E2E Tests** - User journey testing
+- **Performance Tests** - Load and stress testing
+
+## 📞 Support & Maintenance
+
+- **24/7 System Monitoring** - Uptime monitoring
+- **Automated Backups** - Daily data backups
+- **Security Updates** - Regular security patches
+- **Feature Updates** - Continuous improvements
+- **Technical Support** - Dedicated support team
 
 ## 🤝 Contributing
 
@@ -252,15 +295,13 @@ The project includes:
 
 This project is licensed under the MIT License.
 
-## 🔗 Links
+## � Contact
 
-- [React Documentation](https://react.dev/)
-- [TypeScript Documentation](https://www.typescriptlang.org/)
-- [Tailwind CSS Documentation](https://tailwindcss.com/)
-- [Radix UI Documentation](https://www.radix-ui.com/)
-- [React Query Documentation](https://tanstack.com/query/latest)
-- [Zustand Documentation](https://github.com/pmndrs/zustand)
+For support and inquiries:
+- **Email**: support@lpgagency.com
+- **Phone**: +91-XXXXXXXXXX
+- **Website**: https://lpgagency.com
 
 ---
 
-Built with ❤️ using modern React technologies.
+Built with ❤️ for the LPG industry using modern web technologies.
